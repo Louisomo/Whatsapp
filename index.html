@@ -1,0 +1,163 @@
+<!-- Created by Louis -->
+
+<!doctype html>
+<html>
+ <head> 
+  <title>WhatsApp</title> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="app/css/style.css" rel="stylesheet"> 
+  <script src="app/javascript/script"></script> 
+ </head> 
+ <body>
+ <div id="wrapper">
+  <header> 
+   <span>WhatsApp</span> 
+   <span class="material-icons">search</span> 
+   <span class="material-icons" id="more">more_vert<select name="mode" id="mode"> <option value="light" selected>Light Mode</option> <option value="dark">Dark Mode</option> </select> </span> 
+  </header> 
+  <div id="headings"> 
+   <span class="material-icons-round">camera_alt</span> 
+   <span><a href="#chat">chats</a></span> 
+   <span><a href="#status">status</a></span> 
+   <span><a href="#call">calls</a></span> 
+  </div> 
+  <div id="view-holder"> 
+   <div class="view" id="chat"> 
+    <div class="box chat-box">
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Oties</span> 
+      <span class="msg"> <span class="msgcont">whatsup my bro</span> </span> 
+     </div> 
+     <span class="time">10:50 pm</span> 
+    </div> 
+    <div class="box chat-box">
+        <span class="prof"></span>
+        <div class="nm-wrap">
+      <span class="name">My Golden Mum</span> 
+      <span class="msg"> <span class="msgcont">My baby, i love you</span> </span> 
+     </div> 
+     <span class="time">8:51 pm</span> 
+    </div> 
+    <div class="box chat-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Programmer Rotimi</span> 
+      <span class="msg"> <span class="msgcont">Whatsup bro</span> </span> 
+     </div> 
+     <span class="time">12:30 am</span> 
+    </div> 
+    <div class="box chat-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Aisha</span> 
+      <span class="msg"> <span class="msgcont">Abeg help me with urgent 2k</span> </span> 
+     </div> 
+     <span class="time">6:33 pm</span> 
+    </div> 
+    <div class="box chat-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Ose</span> 
+      <span class="msg"> <span class="msgcont">Nice code</span> </span> 
+     </div> 
+     <span class="time">1:24 pm</span> 
+    </div> 
+    <div class="box chat-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Samuel</span> 
+      <span class="msg"> <span class="msgcont">Good</span> </span> 
+     </div> 
+     <span class="time">Yesterday</span> 
+    </div> 
+    <div class="box chat-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Providence</span> 
+      <span class="msg"> <span class="msgcont">Hi</span> </span> 
+     </div> 
+     <span class="time">Yesterday</span> 
+    </div> 
+   </div> 
+   <div class="view" id="status"> 
+    <div class="box status-box" id="ur-status"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">My status</span> 
+      <span class="msg"> <span class="msgcont">Tap to add status updates</span> </span> 
+     </div> 
+    </div> 
+    <div class="txt-status">
+      Recent updates 
+    </div> 
+    <div class="box status-box recent"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Oties</span> 
+      <span class="msg"> <span class="msgcont">20 minutes ago</span> </span> 
+     </div> 
+    </div> 
+    <div class="box status-box recent"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Providence</span> 
+      <span class="msg"> <span class="msgcont">40 minutes ago</span> </span> 
+     </div> 
+    </div> 
+    <div class="txt-status">
+      Viewed updates 
+    </div> 
+    <div class="box status-box viewed"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">My Golden Mum</span> 
+      <span class="msg"> <span class="msgcont">Today, 10:30 am</span> </span> 
+     </div> 
+    </div> 
+    <div class="box status-box viewed"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Samuel</span> 
+      <span class="msg"> <span class="msgcont">Yesterday, 11:30 pm</span> </span> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="view" id="call"> 
+    <div class="box call-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">My Golden Mum</span> 
+      <span class="msg"> <span class="material-icons call-ic">call_made</span> <span class="msgcont">Yesterday, 5:30 pm</span> </span> 
+     </div> 
+     <span class="material-icons ic-call">call</span> 
+    </div> 
+    <div class="box call-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">Aisha</span> 
+      <span class="msg"> <span class="material-icons call-ic">call_received</span> <span class="msgcont">July 2, 6:00 pm</span> </span> 
+     </div> 
+     <span class="material-icons ic-call">call</span> 
+    </div> 
+    <div class="box call-box"> 
+     <span class="prof"></span> 
+     <div class="nm-wrap"> 
+      <span class="name">My Lovely Dad</span> 
+      <span class="msg"> <span class="material-icons call-ic">call_made</span> <span class="msgcont">June 3, 9:00 am</span> </span> 
+     </div> 
+     <span class="material-icons ic-call">call</span> 
+    </div> 
+   </div> 
+  </div> 
+  <footer> 
+   <div id="more-chat" class="fixed bottom"></div> 
+   <div id="more-status" class="fixed bottom"></div> 
+   <div id="more-call" class="fixed bottom"></div> 
+   <div id="edit" class="fixed"></div> 
+  </footer>
+  </div> 
+ </body>
+</html>

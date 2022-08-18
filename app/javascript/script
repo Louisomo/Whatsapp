@@ -1,0 +1,178 @@
+// Created by Louis
+
+var holder,view,rect;
+var headings,moreChat,moreStatus,moreEdit,moreCall,elmode,mode="light";
+var greenColor;
+var headingColor;
+
+var lightMode={
+    top:"rgb(0,128,105)",
+    view:"white",
+    headings:"rgb(171,213,205)",
+    headers:"white",
+    contact_name:"#101617",
+    thumb:"white",
+    msg_color:"rgb(110,126,136)",
+    edit_pencil_bg:"rgba(230,230,230,0.7)",
+    edit_pencil:"#222"
+};
+
+
+var darkMode={
+    top:"rgb(32,44,51)",
+    view:"#0F171F",
+    headings:"#879098",
+    headers:"#879098",
+    contact_name:"#E0E4E5",
+    thumb:"rgb(0,168,132)",
+    msg_color:"#809098",
+    edit_pencil_bg:"rgb(32,44,51)",
+    edit_pencil:"#fff"
+};
+
+
+window.onload=function()
+{
+ 
+initializeElements();
+addViewEvent();
+addModeEvent();
+
+window.setTimeout(function()
+{
+alert("Tap more ( \u22EE ) icon to change theme.\n\nLike please..!");
+
+},500); 
+
+}
+
+function addViewEvent()
+{
+    
+    holder.addEventListener("scroll",function()
+{
+    onScroll();
+});
+
+}
+
+function addModeEvent()
+{
+    
+elmode.addEventListener("change",function()
+{
+
+var root=document.querySelector(":root");
+
+if(this.value=="light")
+    {
+    
+    mode="light";
+    
+    root.style.setProperty("--top",lightMode.top);
+    root.style.setProperty("--view",lightMode.view); root.style.setProperty("--headings",lightMode.headings);
+    root.style.setProperty("--headers",lightMode.headers);
+    root.style.setProperty("--msg-color",lightMode.msg_color);
+    root.style.setProperty("--thumb",lightMode.thumb);
+    root.style.setProperty("--contact-name",lightMode.contact_name);
+    root.style.setProperty("--edit-pencil-bg",lightMode.edit_pencil_bg);
+    root.style.setProperty("--edit-pencil",lightMode.edit_pencil);
+    
+    greenColor=lightMode.thumb;
+    headingColor=lightMode.headings;
+    onScroll();
+    }
+    else{
+    
+    mode="dark";
+    
+        root.style.setProperty("--top",darkMode.top);
+    root.style.setProperty("--view",darkMode.view); root.style.setProperty("--headings",darkMode.headings);
+    root.style.setProperty("--headers",darkMode.headers);
+    root.style.setProperty("--msg-color",darkMode.msg_color);
+    root.style.setProperty("--thumb",darkMode.thumb);
+    root.style.setProperty("--contact-name",darkMode.contact_name);
+    root.style.setProperty("--edit-pencil-bg",darkMode.edit_pencil_bg);
+    root.style.setProperty("--edit-pencil",darkMode.edit_pencil);
+    
+    greenColor=darkMode.thumb;
+    headingColor=darkMode.headings;
+    onScroll();
+    }
+    
+});
+    
+}
+
+
+
+function initializeElements()
+{
+
+moreChat=document.getElementById("more-chat");
+moreStatus=document.getElementById("more-status");
+moreEdit=document.getElementById("edit");
+moreCall=document.getElementById("more-call");
+holder=document.querySelector("#view-holder");
+view=document.querySelector("#chat");
+elmode=document.getElementById("mode");
+headings=document.getElementById("headings");
+
+
+if(elmode.value=="light")
+{
+    greenColor=lightMode.thumb;
+    headingColor=lightMode.headings;
+}
+else{
+    greenColor=darkMode.thumb;
+    headingColor=darkMode.headings;
+}
+
+
+}
+
+
+function onScroll()
+{
+    rect=view.getBoundingClientRect();
+    
+    let pos=rect.right;
+    if(pos==360)
+    {
+
+        $("#headings span:nth-child(2)").css("color",greenColor);
+        $("#headings span:nth-child(3)").css("color",headingColor);
+        $("#headings span:nth-child(4)").css("color",headingColor);
+    
+        
+   moreChat.style.setProperty("visibility","visible"); 
+  moreStatus.style.setProperty("visibility","hidden"); 
+    moreEdit.style.setProperty("visibility","hidden"); 
+    moreCall.style.setProperty("visibility","hidden");   
+    
+    }
+    else if(pos==0)
+    {
+        $("#headings span:nth-child(3)").css("color",greenColor);
+        $("#headings span:nth-child(2)").css("color",headingColor);
+        $("#headings span:nth-child(4)").css("color",headingColor);
+    
+    moreChat.style.setProperty("visibility","hidden"); 
+    moreStatus.style.setProperty("visibility","visible"); 
+    moreEdit.style.setProperty("visibility","visible"); 
+    moreCall.style.setProperty("visibility","hidden");
+    }
+    else if(pos==-360)
+    {
+        $("#headings span:nth-child(4)").css("color",greenColor);
+        $("#headings span:nth-child(2)").css("color",headingColor);
+        $("#headings span:nth-child(3)").css("color",headingColor);
+        
+    moreChat.style.setProperty("visibility","hidden"); 
+    moreStatus.style.setProperty("visibility","hidden"); 
+    moreEdit.style.setProperty("visibility","hidden"); 
+    moreCall.style.setProperty("visibility","visible");
+        
+    }
+}
